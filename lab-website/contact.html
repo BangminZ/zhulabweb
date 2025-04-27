@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 实验室网站</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">实验室名称</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="research.html">研究方向</a></li>
+                <li><a href="team.html">团队成员</a></li>
+                <li><a href="publications.html">研究成果</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h1>联系我们</h1>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>联系方式</h2>
+                    <div class="info-item">
+                        <h3>地址</h3>
+                        <p>XX省XX市XX区XX路XX号</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>电话</h3>
+                        <p>+86 XXX-XXXX-XXXX</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>邮箱</h3>
+                        <p>contact@labname.edu.cn</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>发送消息</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">消息内容</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">发送消息</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <h2>实验室位置</h2>
+                <div class="map">
+                    <!-- 这里可以嵌入地图，比如百度地图或高德地图 -->
+                    <img src="images/map-placeholder.jpg" alt="实验室位置地图">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 实验室名称. 保留所有权利.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
