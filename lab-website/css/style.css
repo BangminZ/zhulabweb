@@ -369,9 +369,10 @@ nav {
 
 /* 页脚 */
 footer {
+    margin-top: auto;
     background-color: var(--secondary-color);
     color: #fff;
-    padding: 4rem 5% 2rem;
+    padding: 2rem 5%;
 }
 
 .footer-content {
@@ -509,52 +510,73 @@ footer {
 
 .research-area {
     display: flex;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     background: white;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-area:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .research-image {
     flex: 1;
     min-width: 300px;
+    position: relative;
+    overflow: hidden;
 }
 
 .research-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.research-area:hover .research-image img {
+    transform: scale(1.05);
 }
 
 .research-content {
     flex: 2;
-    padding: 40px;
+    padding: 50px;
+    position: relative;
 }
 
 .research-content h2 {
-    font-size: 2em;
+    font-size: 28px;
     color: #2c3e50;
     margin-bottom: 30px;
-    display: flex;
-    align-items: center;
+    position: relative;
+    padding-bottom: 15px;
 }
 
-.research-content h2 i {
-    margin-right: 15px;
-    color: #3498db;
+.research-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
 }
 
 .research-info h3 {
     color: #3498db;
-    margin: 25px 0 15px;
-    font-size: 1.3em;
+    margin: 25px 0 20px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .research-info p {
     line-height: 1.8;
     color: #555;
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .research-info ul {
@@ -583,36 +605,493 @@ footer {
     }
     
     .research-image {
-        height: 200px;
+        height: 250px;
     }
     
     .research-content {
-        padding: 20px;
+        padding: 30px;
     }
 }
 
 .research-intro {
-    padding: 60px 0;
-    background-color: #f8f9fa;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     margin-top: 80px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .research-intro .container {
-    max-width: 800px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+.research-intro h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.research-intro h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2c3e50);
+    border-radius: 2px;
+}
+
+.research-intro p {
+    font-size: 20px;
+    line-height: 2.2;
+    color: #2c3e50;
+    text-indent: 2em;
+    text-align: justify;
+    position: relative;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .research-intro {
+        padding: 60px 0;
+    }
+    
+    .research-intro h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .research-intro p {
+        font-size: 18px;
+        padding: 20px;
+    }
+}
+
+.team-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-top: 80px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-section h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 80px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.team-category {
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.team-category:last-child {
+    margin-bottom: 0;
+}
+
+.team-category h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 导师卡片样式 */
+.team-member {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.team-member .member-photo {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+    margin-right: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.team-member .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-photo img {
+    transform: scale(1.05);
+}
+
+.team-member .member-info {
+    padding: 50px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.team-member .member-info h3 {
+    font-size: 30px;
+    color: #2c3e50;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.team-member .member-info .title {
+    color: #3498db;
+    font-size: 22px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.team-member .member-info .bio {
+    color: #555;
+    line-height: 1.8;
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* 工作人员卡片样式 */
+.staff-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 60px 20px;
+    max-width: 1700px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.staff-item {
+    min-height: 260px;
+    max-width: 260px;
+    width: 100%;
+    padding: 24px 8px 18px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.staff-item .member-photo {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.staff-item .member-info h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.staff-item .member-info .title {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.staff-item .member-info .bio {
+    font-size: 13px;
+}
+
+@media (max-width: 1500px) {
+    .staff-card {
+        max-width: 1200px;
+        padding: 40px 10px;
+    }
+    .staff-grid {
+        max-width: 1000px;
+        gap: 24px;
+    }
+    .staff-item {
+        max-width: 200px;
+        min-height: 200px;
+        padding: 16px 4px 10px 4px;
+    }
+    .staff-item .member-photo {
+        width: 110px;
+        height: 110px;
+    }
+}
+@media (max-width: 1200px) {
+    .staff-card {
+        max-width: 900px;
+        padding: 20px 2px;
+    }
+    .staff-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+        gap: 16px;
+    }
+    .staff-item {
+        max-width: 160px;
+        min-height: 120px;
+        padding: 8px 2px 6px 2px;
+    }
+    .staff-item .member-photo {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (max-width: 768px) {
+    .staff-card {
+        padding: 10px 1px;
+    }
+    .staff-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        gap: 10px;
+    }
+    .staff-item {
+        max-width: 100%;
+        min-height: 80px;
+        padding: 4px 1px 3px 1px;
+    }
+    .staff-item .member-photo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* 学生团队样式 */
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.research-intro h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
+.student-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.student-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.student-item .member-photo {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.student-item .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.student-item:hover .member-photo img {
+    transform: scale(1.05);
+}
+
+.student-item .member-info {
+    padding: 20px;
+    text-align: center;
+    background: white;
+}
+
+.student-item .member-info h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.student-item .member-info .title {
+    color: #3498db;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.student-item .member-info .bio {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@media (max-width: 1400px) {
+    .student-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .student-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .student-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .student-item .member-photo {
+        height: 250px;
+    }
+}
+
+.staff-grid.staff-separate {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.staff-grid.staff-separate .staff-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 320px;
+    padding: 20px;
+}
+
+.staff-grid.staff-separate .staff-item .member-photo {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.staff-grid.staff-separate .staff-item .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.staff-grid.staff-separate .staff-item:hover .member-photo img {
+    transform: scale(1.05);
+}
+
+.staff-grid.staff-separate .staff-item .member-info {
+    padding: 0;
     text-align: center;
 }
 
-.research-intro p {
-    font-size: 16px;
-    line-height: 1.8;
+.staff-grid.staff-separate .staff-item .member-info h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.staff-grid.staff-separate .staff-item .member-info .title {
+    color: #3498db;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.staff-grid.staff-separate .staff-item .member-info .bio {
     color: #666;
-    text-indent: 2em;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@media (max-width: 1400px) {
+    .staff-grid.staff-separate {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 1024px) {
+    .staff-grid.staff-separate {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .staff-grid.staff-separate {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    .staff-grid.staff-separate .staff-item .member-photo {
+        width: 100px;
+        height: 100px;
+    }
 } 
