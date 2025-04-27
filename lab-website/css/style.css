@@ -45,7 +45,6 @@ nav {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--secondary-color);
-    text-transform: uppercase;
     letter-spacing: 1px;
     padding-left: 1%;
 }
@@ -476,4 +475,144 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
     }
+}
+
+/* 研究方向页面样式 */
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/research-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.header-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.header-content p {
+    font-size: 1.5em;
+    opacity: 0.9;
+}
+
+.research-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.research-area {
+    display: flex;
+    margin-bottom: 80px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.research-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.research-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.research-content {
+    flex: 2;
+    padding: 40px;
+}
+
+.research-content h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.research-content h2 i {
+    margin-right: 15px;
+    color: #3498db;
+}
+
+.research-info h3 {
+    color: #3498db;
+    margin: 25px 0 15px;
+    font-size: 1.3em;
+}
+
+.research-info p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.research-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.research-info ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.research-info ul li:before {
+    content: "•";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .research-area {
+        flex-direction: column;
+    }
+    
+    .research-image {
+        height: 200px;
+    }
+    
+    .research-content {
+        padding: 20px;
+    }
+}
+
+.research-intro {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    margin-top: 80px;
+}
+
+.research-intro .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.research-intro h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.research-intro p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    text-indent: 2em;
 } 
